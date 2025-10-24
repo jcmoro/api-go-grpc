@@ -1,0 +1,14 @@
+services:
+  translation-server:
+    build:
+      context: .           # <-- raíz del proyecto
+      dockerfile: Dockerfile
+    container_name: translation-server
+    ports:
+      - "8765:8765"
+    networks:
+      - grpcnet
+
+networks:
+  grpcnet:
+    driver: bridge
